@@ -109,7 +109,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
 }
 
 li {
@@ -171,7 +170,7 @@ body {
     font-family: var(--fontFamily-roboto);
     font-size: var(--fontSize-8);
     line-height: 1.75;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 body.loaded {
