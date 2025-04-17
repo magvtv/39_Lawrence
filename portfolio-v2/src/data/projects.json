@@ -1,0 +1,128 @@
+[
+  {
+    "id": "1",
+    "title": "Urban Microclimate Simulator",
+    "slug": "urban-microclimate-simulator",
+    "category": "Research",
+    "tags": ["Urban Design", "Simulation", "Climate Modeling"],
+    "thumbnailUrl": "/assets/projects/microclimate-thumb.jpg",
+    "heroImage": "/assets/projects/microclimate-hero.jpg",
+    "description": "A real-time simulation tool for urban planners to model microclimate conditions in dense urban environments. This tool helps predict temperature variations, air flow patterns, and thermal comfort levels in urban spaces.",
+    "shortDescription": "Real-time simulation tool for modeling urban microclimate conditions",
+    "year": 2021,
+    "client": "Boston City Planning Department",
+    "role": "Principal Investigator & Lead Developer",
+    "technologies": ["Python", "Three.js", "WebGL", "Data Visualization"],
+    "linkUrl": "https://github.com/janesmith-design/urban-climate",
+    "hasModel": true,
+    "modelUrl": "https://sketchfab.com/models/abc123",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": "The Urban Microclimate Simulator is a web-based tool that enables urban planners and architects to predict and visualize how building configurations affect local climate conditions. Using computational fluid dynamics and thermal modeling, it provides real-time feedback on design decisions."
+      },
+      {
+        "type": "image",
+        "url": "/assets/projects/microclimate-1.jpg",
+        "caption": "Visualization of temperature gradients in an urban canyon"
+      },
+      {
+        "type": "paragraph",
+        "content": "The project was developed in collaboration with the Boston City Planning Department to address urban heat island effects in densely built areas. By simulating different scenarios, planners can make data-driven decisions about building placement, street orientation, and green space allocation."
+      },
+      {
+        "type": "image",
+        "url": "/assets/projects/microclimate-2.jpg",
+        "caption": "User interface showing real-time parameter adjustments"
+      },
+      {
+        "type": "paragraph",
+        "content": "The tool is now being used by three major U.S. cities for urban planning and has been featured in the Journal of Urban Planning and Design. The open-source repository has garnered significant attention in the architectural and urban planning communities."
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Parametric Facade System",
+    "slug": "parametric-facade-system",
+    "category": "Architecture",
+    "tags": ["Parametric Design", "Facade", "Sustainability"],
+    "thumbnailUrl": "/assets/projects/facade-thumb.jpg",
+    "heroImage": "/assets/projects/facade-hero.jpg",
+    "description": "A customizable parametric facade system that optimizes for daylighting, energy performance, and aesthetic expression. The system adapts to different climate conditions and building orientations automatically.",
+    "shortDescription": "Adaptive facade system optimized for daylighting and energy performance",
+    "year": 2020,
+    "client": "Foster + Partners",
+    "role": "Lead Designer",
+    "technologies": ["Grasshopper", "Rhino", "Ladybug Tools", "Python"],
+    "linkUrl": "https://parametricfacade.design",
+    "hasModel": true,
+    "modelUrl": "https://sketchfab.com/models/def456",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": "The Parametric Facade System represents a breakthrough in performance-based facade design. By creating a computational framework that responds to multiple environmental and programmatic inputs, we developed a facade system that can be deployed across diverse climate zones while maintaining optimal performance."
+      },
+      {
+        "type": "image",
+        "url": "/assets/projects/facade-1.jpg",
+        "caption": "Facade panel variations responding to solar orientation"
+      },
+      {
+        "type": "paragraph",
+        "content": "The system uses evolutionary algorithms to generate panel geometry that balances daylighting, solar heat gain, views, and material efficiency. Each panel is unique yet part of a cohesive system that can be manufactured using standard fabrication techniques."
+      },
+      {
+        "type": "video",
+        "url": "/assets/projects/facade-process.mp4",
+        "caption": "Animation showing the generative design process"
+      },
+      {
+        "type": "paragraph",
+        "content": "Initial testing shows that buildings using this facade system can reduce energy consumption by up to 23% compared to conventional facade solutions. The system has been implemented on a commercial tower in Dubai and is currently being adapted for residential applications."
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Digital Heritage Reconstruction",
+    "slug": "digital-heritage-reconstruction",
+    "category": "Heritage",
+    "tags": ["Historic Preservation", "3D Scanning", "Virtual Reality"],
+    "thumbnailUrl": "/assets/projects/heritage-thumb.jpg",
+    "heroImage": "/assets/projects/heritage-hero.jpg",
+    "description": "Digital reconstruction of the historic Boston Public Library reading room, combining laser scanning, photogrammetry, and archival research to create an immersive VR experience of the space as it appeared in 1895.",
+    "shortDescription": "VR reconstruction of historic Boston Public Library reading room",
+    "year": 2019,
+    "client": "Boston Historical Society",
+    "role": "Project Lead & Digital Reconstruction Specialist",
+    "technologies": ["LiDAR", "Photogrammetry", "Unreal Engine", "VR"],
+    "linkUrl": "https://bostonheritage.org/projects/bpl-digital",
+    "hasModel": true,
+    "modelUrl": "https://sketchfab.com/models/ghi789",
+    "content": [
+      {
+        "type": "paragraph",
+        "content": "The Digital Heritage Reconstruction project aims to preserve and enhance access to architectural heritage through cutting-edge digital technologies. For this pilot project, we focused on the historic reading room of the Boston Public Library, combining precise laser scanning of the existing structure with extensive archival research."
+      },
+      {
+        "type": "image",
+        "url": "/assets/projects/heritage-1.jpg",
+        "caption": "Point cloud data from laser scanning of the reading room"
+      },
+      {
+        "type": "paragraph",
+        "content": "Working with historians and archivists, we identified elements that had been altered or removed over the decades. Using period photographs, architectural drawings, and written descriptions, we digitally reconstructed these features to create an accurate representation of the space as it appeared when first completed in 1895."
+      },
+      {
+        "type": "image",
+        "url": "/assets/projects/heritage-2.jpg",
+        "caption": "Side-by-side comparison of current state and historical reconstruction"
+      },
+      {
+        "type": "paragraph",
+        "content": "The final VR experience allows visitors to explore the reading room in its original state, with interactive elements that explain the architectural features and historical context. The project has become a model for digital heritage preservation and is being expanded to include other significant Boston landmarks."
+      }
+    ]
+  }
+]

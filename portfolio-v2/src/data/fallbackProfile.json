@@ -1,0 +1,143 @@
+{
+  "basics": {
+    "name": "Dr. Jane Smith",
+    "title": "Professor of Architecture & Digital Design",
+    "image": "/assets/profile.jpg",
+    "email": "jane.smith@university.edu",
+    "phone": "+1 (555) 123-4567",
+    "summary": "Academic and design professional specializing in computational architecture and sustainable design. Over 15 years of experience bridging traditional architectural principles with emerging digital technologies.",
+    "location": {
+      "city": "Boston",
+      "countryCode": "US"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "janesmith",
+        "url": "https://linkedin.com/in/janesmith"
+      },
+      {
+        "network": "GitHub",
+        "username": "janesmith-design",
+        "url": "https://github.com/janesmith-design"
+      },
+      {
+        "network": "Twitter",
+        "username": "janesmith_arch",
+        "url": "https://twitter.com/janesmith_arch"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Boston University",
+      "position": "Associate Professor of Architecture",
+      "url": "https://bu.edu",
+      "startDate": "2018-09-01",
+      "endDate": null,
+      "summary": "Teaching advanced courses in computational design and sustainable architecture",
+      "highlights": [
+        "Developed new curriculum for Digital Fabrication",
+        "Lead researcher for Urban Sustainability Lab",
+        "Awarded Teacher of the Year 2022"
+      ]
+    },
+    {
+      "name": "Foster + Partners",
+      "position": "Senior Design Architect",
+      "url": "https://fosterandpartners.com",
+      "startDate": "2013-06-01",
+      "endDate": "2018-08-30",
+      "summary": "Led design teams for large-scale international projects",
+      "highlights": [
+        "Lead designer for Dubai Innovation Hub",
+        "Implemented parametric design workflow",
+        "Managed team of 12 architects and designers"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "MIT",
+      "area": "Architecture",
+      "studyType": "Ph.D.",
+      "startDate": "2009-09-01",
+      "endDate": "2013-05-01",
+      "score": "Summa Cum Laude",
+      "courses": [
+        "Computational Design",
+        "Sustainable Systems",
+        "Digital Fabrication"
+      ]
+    },
+    {
+      "institution": "Harvard University",
+      "area": "Architecture",
+      "studyType": "Master's",
+      "startDate": "2007-09-01",
+      "endDate": "2009-05-01",
+      "score": "4.0",
+      "courses": [
+        "Urban Design",
+        "Building Systems",
+        "History of Architecture"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Architecture",
+      "level": "Expert",
+      "keywords": [
+        "Urban Design",
+        "Sustainable Design",
+        "Parametric Modeling"
+      ]
+    },
+    {
+      "name": "Software",
+      "level": "Advanced",
+      "keywords": [
+        "Rhinoceros 3D",
+        "Grasshopper",
+        "Revit",
+        "AutoCAD",
+        "Adobe Creative Suite"
+      ]
+    },
+    {
+      "name": "Programming",
+      "level": "Intermediate",
+      "keywords": [
+        "Python",
+        "JavaScript",
+        "HTML/CSS"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Urban Microclimate Simulator",
+      "description": "A real-time simulation tool for urban planners to model microclimate conditions",
+      "highlights": [
+        "Published in Journal of Urban Planning",
+        "Used by 3 major city planning departments",
+        "Open-source repository with 500+ stars"
+      ],
+      "keywords": [
+        "Urban Design",
+        "Simulation",
+        "Climate Modeling"
+      ],
+      "startDate": "2020-01-01",
+      "endDate": "2021-12-31",
+      "url": "https://github.com/janesmith-design/urban-climate",
+      "roles": [
+        "Principal Investigator",
+        "Lead Developer"
+      ],
+      "entity": "Boston University Research Lab",
+      "type": "Academic Research"
+    }
+  ]
+}
