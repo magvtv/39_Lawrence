@@ -8,7 +8,7 @@ import {
   DownloadIcon,
   FolderIcon,
   HomeIcon,
-  LinkedInIcon,
+  Linkedin,
   MailIcon,
   MenuIcon,
   XIcon,
@@ -158,7 +158,7 @@ const Header: React.FC = () => {
               </Button>
 
               <Button variant="default" className="w-full justify-start">
-                <LinkedInIcon className="h-4 w-4 mr-2" />
+                <Linkedin className="h-4 w-4 mr-2" />
                 Connect on LinkedIn
               </Button>
             </div>

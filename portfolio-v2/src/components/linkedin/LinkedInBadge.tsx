@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { LinkedInIcon } from "lucide-react";
+import { LinkedinIcon } from "lucide-react";
 import type React from "react";
 import { useLinkedInProfile } from "../../hooks/useLinkedInProfile";
 
@@ -36,7 +36,7 @@ export const LinkedInBadge: React.FC<LinkedInBadgeProps> = ({
           Failed to connect to LinkedIn. {error.message}
         </p>
         <Button onClick={retry} variant="outline" size="sm" className="gap-2">
-          <LinkedInIcon size={16} className="text-blue-600" />
+          <LinkedinIcon size={16} className="text-blue-600" />
           Retry connection
         </Button>
       </div>
@@ -50,7 +50,7 @@ export const LinkedInBadge: React.FC<LinkedInBadgeProps> = ({
           variant="outline"
           className="bg-blue-50 text-blue-600 border-blue-200 flex items-center gap-1.5 px-2 py-1"
         >
-          <LinkedInIcon size={14} className="text-blue-600" />
+          <LinkedinIcon size={14} className="text-blue-600" />
           <span className="text-xs font-medium">Verified from LinkedIn</span>
         </Badge>
       </div>
@@ -61,7 +61,7 @@ export const LinkedInBadge: React.FC<LinkedInBadgeProps> = ({
     return (
       <div className={`flex items-center ${className}`}>
         <Button onClick={login} variant="outline" size="sm" className="gap-2">
-          <LinkedInIcon size={16} className="text-blue-600" />
+          <LinkedinIcon size={16} className="text-blue-600" />
           Connect LinkedIn Profile
         </Button>
       </div>

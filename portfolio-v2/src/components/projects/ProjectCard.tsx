@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { ArrowUpRightIcon, Calendar, Cube } from "lucide-react";
+import { ArrowUpRightIcon, Calendar, Box } from "lucide-react";
 import type React from "react";
 import { Link } from "react-router-dom";
 import type { Project } from "../../types/project";
@@ -54,7 +54,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                   variant="outline"
                   className="bg-white/80 backdrop-blur-sm"
                 >
-                  <Cube size={14} className="mr-1" /> 3D Model
+                  <Box size={14} className="mr-1" /> 3D Model
                 </Badge>
               </div>
             )}

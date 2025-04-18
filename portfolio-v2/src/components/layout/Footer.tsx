@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button";
 import {
   ArrowUpIcon,
-  GitHubIcon,
+  Github,
   InstagramIcon,
-  LinkedInIcon,
+  Linkedin,
   MailIcon,
   TwitterIcon,
 } from "lucide-react";
@@ -82,13 +82,13 @@ const Footer: React.FC = () => {
             <div className="flex gap-4 mt-6">
               <Button variant="ghost" size="icon" asChild>
                 <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-                  <LinkedInIcon className="h-5 w-5" />
+                  <Linkedin className="h-5 w-5" />
                   <span className="sr-only">LinkedIn</span>
                 </a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
                 <a href="https://github.com" target="_blank" rel="noreferrer">
-                  <GitHubIcon className="h-5 w-5" />
+                  <Github className="h-5 w-5" />
                   <span className="sr-only">GitHub</span>
                 </a>
               </Button>

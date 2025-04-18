@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
-import { ExternalLinkIcon, LinkedInIcon, RefreshCwIcon } from "lucide-react";
+import { ExternalLinkIcon, Linkedin, RefreshCwIcon } from "lucide-react";
 import type React from "react";
 import { useLinkedInProfile } from "../../hooks/useLinkedInProfile";
 
@@ -33,7 +33,7 @@ export const LinkedInActivity: React.FC<LinkedInActivityProps> = ({
       <Card className={className}>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <LinkedInIcon size={20} className="text-blue-600" />
+            <Linkedin size={20} className="text-blue-600" />
             LinkedIn Activity
           </CardTitle>
           <CardDescription>Unable to load LinkedIn activity</CardDescription>
@@ -55,7 +55,7 @@ export const LinkedInActivity: React.FC<LinkedInActivityProps> = ({
         {showTitle && (
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <LinkedInIcon size={20} className="text-blue-600" />
+              <Linkedin size={20} className="text-blue-600" />
               LinkedIn Activity
             </CardTitle>
             <CardDescription>Loading recent activity...</CardDescription>
@@ -80,7 +80,7 @@ export const LinkedInActivity: React.FC<LinkedInActivityProps> = ({
         {showTitle && (
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <LinkedInIcon size={20} className="text-blue-600" />
+              <Linkedin size={20} className="text-blue-600" />
               LinkedIn Activity
             </CardTitle>
             <CardDescription>
@@ -103,7 +103,7 @@ export const LinkedInActivity: React.FC<LinkedInActivityProps> = ({
       {showTitle && (
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <LinkedInIcon size={20} className="text-blue-600" />
+            <Linkedin size={20} className="text-blue-600" />
             LinkedIn Activity
           </CardTitle>
           <CardDescription>Recent posts and activity</CardDescription>

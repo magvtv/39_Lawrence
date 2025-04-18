@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import {
   GithubIcon,
   InstagramIcon,
-  LinkedInIcon,
+  Linkedin,
   MailIcon,
   MapPinIcon,
   PhoneIcon,
@@ -43,7 +43,7 @@ const ContactPage: React.FC = () => {
     {
       name: "LinkedIn",
       url: "https://linkedin.com/in/",
-      icon: <LinkedInIcon className="h-5 w-5" />,
+      icon: <Linkedin className="h-5 w-5" />,
       color: "text-[#0077B5] hover:bg-[#0077B5]/10",
     },
     {
@@ -74,7 +74,9 @@ const ContactPage: React.FC = () => {
       className="max-w-5xl mx-auto"
     >
       <motion.div variants={itemVariants} className="mb-12">
-        <h1 className="text-4xl font-bold mb-3">Get In Touch</h1>
+        <h1 className="text-4xl font-bold mb-3">
+          Get In Touch
+        </h1>
         <p className="text-muted-foreground max-w-2xl">
           Have a project in mind or interested in working together? I'd love to
           hear from you. Fill out the form below or reach out directly through

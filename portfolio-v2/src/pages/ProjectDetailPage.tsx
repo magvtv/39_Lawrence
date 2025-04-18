@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import {
   ArrowLeftIcon,
   CalendarIcon,
-  Cube3DIcon,
+  Boxes,
   ExternalLinkIcon,
   TagIcon,
   UserIcon,
@@ -155,7 +155,7 @@ const ProjectDetailPage: React.FC = () => {
         >
           <div className="bg-muted/60 p-4 rounded-lg mb-4">
             <h2 className="text-xl font-semibold mb-2 flex items-center">
-              <Cube3DIcon className="mr-2 h-5 w-5" /> 3D Model Preview
+              <Boxes className="mr-2 h-5 w-5" /> 3D Model Preview
             </h2>
             <p className="text-muted-foreground mb-4">
               Interact with the 3D model by clicking and dragging to rotate,
