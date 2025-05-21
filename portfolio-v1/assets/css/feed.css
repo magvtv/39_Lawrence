@@ -1,0 +1,201 @@
+/*-----------------------------------*\
+  #FEED
+\*-----------------------------------*/
+
+.feed {
+    border-block: 1px solid var(--border-eerie-black);
+    margin-block-start: -30px; /* Push section up */
+}
+
+.feed .section-title {
+    margin-block-end: 60px;
+}
+
+.feed-content {
+    padding: 60px;
+    border: 1px solid var(--border-eerie-black);
+    border-radius: 1rem;
+    max-width: 1400px;
+    margin-inline: auto;
+}
+
+.feed-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    border-block-end: 1px solid var(--border-eerie-black);
+    margin-block-end: 40px;
+    padding-block-end: 20px;
+    gap: 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.feed-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.feed-tabs .tab-btn {
+    padding: 15px 30px;
+    border: none;
+    background: none;
+    color: var(--text-light-gray);
+    transition: var(--transition-1);
+    cursor: pointer;
+    white-space: nowrap;
+    min-width: max-content;
+    border-radius: 50px;
+}
+
+.feed-tabs .tab-btn.active,
+.feed-tabs .tab-btn:is(:hover, :focus-visible) {
+    color: var(--text-white);
+    background-color: var(--bg-eerie-black);
+}
+
+.feed-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-block-end: 40px;
+}
+
+.feed-card {
+    background: var(--bg-eerie-black);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.feed-card:hover {
+    transform: translateY(-5px);
+}
+
+.feed-card .card-banner {
+    position: relative;
+    aspect-ratio: 16/9;
+}
+
+.feed-card .card-content {
+    padding: 2rem;
+}
+
+.feed-card .card-subtitle {
+    color: var(--text-majorelle-blue);
+    font-size: var(--fontSize-7);
+    font-weight: var(--weight-medium);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.feed-card .card-title {
+    color: var(--text-white);
+    font-size: var(--fontSize-5);
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.feed-card .card-title:hover {
+    color: var(--text-majorelle-blue);
+}
+
+.feed-card .card-text {
+    color: var(--text-gray);
+    font-size: var(--fontSize-6);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.feed-card .card-date {
+    color: var(--text-gray);
+    font-size: var(--fontSize-7);
+}
+
+/* Error State */
+.feed-error {
+    background-color: var(--bg-eerie-black);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.feed-error p {
+    color: var(--text-light-gray);
+    margin-block-end: 20px;
+}
+
+/* Toast Notifications */
+.feed-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--bg-eerie-black);
+    color: var(--text-light-gray);
+    padding: 15px 25px;
+    border-radius: var(--radius-pill);
+    font-family: var(--fontFamily-recoleta);
+    font-size: var(--fontSize-8);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 100;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.feed-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.feed-toast .retry-btn {
+    background: var(--bg-white);
+    color: var(--text-black);
+    padding: 5px 15px;
+    border-radius: var(--radius-pill);
+    font-size: var(--fontSize-9);
+    cursor: pointer;
+    transition: var(--transition-1);
+}
+
+.feed-toast .retry-btn:is(:hover, :focus-visible) {
+    opacity: 0.8;
+}
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+@media (min-width: 575px) {
+    .feed-content {
+        padding: 60px 40px;
+    }
+}
+
+@media (min-width: 992px) {
+    .feed-content {
+        padding: 80px 60px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .feed-content {
+        padding: 100px 80px;
+    }
+    
+    .feed-item .title {
+        font-size: var(--fontSize-5);
+    }
+}
+
+@media (max-width: 575px) {
+    .feed-toast {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+        text-align: center;
+        flex-direction: column;
+    }
+} 
