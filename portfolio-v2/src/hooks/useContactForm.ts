@@ -1,21 +1,21 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import zod from "zod";
 
 // Contact form schema validation
-export const contactFormSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters" }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
-  subject: z
+export const contactFormSchema = zod.object({
+  name: zod.string().min(2, { message: "Name must be at least 2 characters" }),
+  email: zod.string().email({ message: "Please enter a valid email address" }),
+  subject: zod
     .string()
     .min(5, { message: "Subject must be at least 5 characters" }),
-  message: z
+  message: zod
     .string()
     .min(10, { message: "Message must be at least 10 characters" }),
 });
 
-export type ContactFormValues = z.infer<typeof contactFormSchema>;
+export type ContactFormValues = zod.infer<typeof contactFormSchema>;
 
 interface UseContactFormOptions {
   endpoint?: string;
