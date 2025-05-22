@@ -1230,7 +1230,7 @@ textarea.input-field {
 
 .contact .map {
     width: 100%;
-    filter: grayscale(1);
+    filter: none;
 }
 
 .contact-item {

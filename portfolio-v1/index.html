@@ -703,11 +703,11 @@
 
                     <h2 class="title h2 section-title">Get In Touch</h2>
                     <div class="contact-content">
-                        <form action="./index.html" method="post" class="contact-form">
-                            <input type="text" name="name" placeholder="Full name" autocomplete="off" required class="input-field">
-                            <input type="email" name="email_address" placeholder="Email address" autocomplete="off" required
+                        <form id="contact-form" class="contact-form">
+                            <input type="text" name="user_name" placeholder="Full name" autocomplete="off" required class="input-field">
+                            <input type="email" name="user_email" placeholder="Email address" autocomplete="off" required
                                 class="input-field">
-                            <input type="tel" name="phone" placeholder="Phone" autocomplete="off" class="input-field">
+                            <input type="tel" name="user_phone" placeholder="Phone" autocomplete="off" class="input-field">
                             <textarea name="message" placeholder="Your message" required class="input-field"></textarea>
                             <button type="submit" class="btn btn:hover">
                                 <span class="span">
@@ -718,7 +718,7 @@
                         </form>
 
                         <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d898.4329239267093!2d-73.91493787358391!3d40.76299026683699!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1671529019371!5m2!1sen!2sbd"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.447651567507!2d37.00290555!3d-1.09138095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f46276c2d9021%3A0xbefd8e40071d3352!2sJuja%2C%20Kenya!5e0!3m2!1sen!2sus!4v1683826574227!5m2!1sen!2sus"
                         width="600" height="450" style="border: 0;" allowfullscreen="" loading="lazy"
                         referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
 
@@ -758,7 +758,7 @@
 
                                 <div>
                                 <span class="title h6">
-                                    lawrence_nderu@live.com
+                                    lawrencenderu@gmail.com
                                 </span>
                             </li>
                         </ul>
@@ -787,6 +787,9 @@
     <div class="cursor-outline" data-cursor></div>
 
 
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
     <!-- Custom js link-->
     <script src="./assets/js/config.js"></script>
     <script src="./assets/js/data.js"></script>

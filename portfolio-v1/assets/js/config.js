@@ -12,6 +12,21 @@ const config = {
             'r_emailaddress',     // Email address
             'w_member_social'      // Post, comment and like
         ].join(' ')  // Join with spaces as required by LinkedIn
+    },
+    
+    // EmailJS Configuration
+    emailJS: {
+        publicKey: '6OlGtEt8EHF9eYTk9',
+        serviceID: 'service_2y5ubtj',
+        templateID: 'template_qrihbam',
+        toEmail: 'lawrencenderu@gmail.com',
+        // Template parameter mappings - fields expected by the EmailJS template
+        templateParams: {
+            nameField: 'name',
+            emailField: 'email',
+            phoneField: 'phone',
+            messageField: 'message'
+        }
     }
 };
 
