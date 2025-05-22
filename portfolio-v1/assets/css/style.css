@@ -735,6 +735,20 @@ body.nav-active {
 
 .social-link {
     color: var(--text-white);
+    font-size: 24px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-eerie-black);
+}
+
+.social-link:hover {
+    color: var(--text-majorelle-blue);
+    transform: translateY(-3px);
 }
 
 .skill-wrapper {
@@ -857,7 +871,7 @@ body.nav-active {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     padding-block: 30px;
-    padding-inline-end: 30px; /* Space for overflow indicator */
+    padding-inline-end: 30px;
     margin-inline: -15px;
     scroll-padding-left: 15px;
     scrollbar-width: none;
@@ -870,6 +884,7 @@ body.nav-active {
 .slider-item {
     min-width: calc((100% - 5rem) / 3);
     scroll-snap-align: start;
+    height: 100%;
 }
 
 .project-card {
@@ -879,6 +894,8 @@ body.nav-active {
     overflow: hidden;
     transition: transform 0.3s ease;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -886,10 +903,11 @@ body.nav-active {
 }
 
 .project-card .card-banner {
-    border-radius: 1rem 1rem 0 0;
+    position: relative;
+    width: 100%;
+    height: 300px; /* Fixed height for all project images */
     overflow: hidden;
-    aspect-ratio: 16/9;
-    height: 250px; /* Fixed height for consistency */
+    border-radius: 1rem 1rem 0 0;
 }
 
 .project-card .card-banner img {
@@ -905,9 +923,10 @@ body.nav-active {
 }
 
 .project-card .card-content {
-    position: relative;
     padding: 2.5rem;
-    background: var(--bg-eerie-black);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card .card-subtitle {
@@ -999,6 +1018,10 @@ body.nav-active {
     .project-card .card-content {
         padding: 2rem;
     }
+
+    .project-card .card-banner {
+        height: 250px; /* Slightly smaller height on mobile */
+    }
 }
 
 
@@ -1011,17 +1034,34 @@ body.nav-active {
 
 .testi {
     border-block: 1px solid var(--border-eerie-black);
+    padding-block: 60px;
 }
 
 .testi .section-title {
-    margin-block-end: 40px;
+    margin-block-end: 80px;
+    font-size: var(--fontSize-3);
+    position: relative;
+}
+
+.testi .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--text-white);
 }
 
 .testi-content {
-    padding-inline-start: 15px;
-    margin-top: 50px;
     position: relative;
-    min-height: 300px; /* Ensure consistent height */
+    margin-block: 50px;
+    padding-inline: 15px;
+    height: 400px; /* Increased minimum height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .testimonial-slide {
@@ -1029,9 +1069,11 @@ body.nav-active {
     top: 0;
     left: 0;
     width: 100%;
+    height: auto;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
+    padding-bottom: 20px; /* Space for indicators */
 }
 
 .testimonial-slide.active {
@@ -1039,39 +1081,106 @@ body.nav-active {
     transform: translateY(0);
 }
 
+.testimonial-content {
+    margin-bottom: 30px;
+}
+
 .testi .section-text {
     text-indent: -15px;
     line-height: 1.5;
     margin-block-end: 20px;
+    font-size: var(--fontSize-4);
 }
 
 .testimonial-indicators {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 30px;
+    gap: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
 }
 
 .indicator {
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: var(--bg-eerie-black);
-    border: none;
+    border: 2px solid var(--border-eerie-black);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .indicator.active {
     background: var(--text-white);
+    border-color: var(--text-white);
+    transform: scale(1.2);
+}
+
+.profile-card {
+    margin-block-start: 30px;
 }
 
 .profile-card .card-banner {
     display: none;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+}
+
+.profile-card .card-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-card .card-title {
+    font-size: var(--fontSize-6);
+    margin-bottom: 5px;
 }
 
 .profile-card .card-subtitle {
     font-size: var(--fontSize-10);
+    color: var(--text-light-gray);
+}
+
+/* Responsive adjustments for testimonials */
+@media (max-width: 767px) {
+    .testi-content {
+        min-height: 450px; /* Increased height for mobile */
+    }
+    
+    .testi .section-text {
+        font-size: var(--fontSize-5);
+        line-height: 1.6;
+    }
+    
+    .profile-card .card-title {
+        font-size: var(--fontSize-7);
+    }
+}
+
+@media (max-width: 575px) {
+    .testi-content {
+        min-height: 500px; /* Further increased for very small screens */
+        padding-inline: 5px;
+    }
+    
+    .testimonial-slide {
+        padding-bottom: 60px;
+    }
+    
+    .testi .section-title {
+        font-size: var(--fontSize-4);
+        margin-block-end: 60px;
+    }
+    
+    .testi .section-text {
+        text-indent: -10px;
+        padding-left: 10px;
+    }
 }
 
 

@@ -42,6 +42,7 @@ export default class TestimonialCarousel {
     init() {
         this.render();
         this.startRotation();
+        this.setupResizeHandler();
     }
 
     render() {
@@ -51,24 +52,26 @@ export default class TestimonialCarousel {
         const newTestimonial = document.createElement('div');
         newTestimonial.className = 'testimonial-slide';
         newTestimonial.innerHTML = `
-            <blockquote class="title h4 section-text">
-                &ldquo; ${current.quote} &rdquo;
-            </blockquote>
+            <div class="testimonial-content">
+                <blockquote class="title h4 section-text">
+                    &ldquo; ${current.quote} &rdquo;
+                </blockquote>
 
-            <div class="profile-card">
-                <figure class="card-banner img-holder" style="--width: 70; --height: 70;">
-                    <img src="${current.image}" width="70" height="70" loading="lazy" alt="${current.name}"
-                        class="img-cover">
-                </figure>
+                <div class="profile-card">
+                    <figure class="card-banner img-holder" style="--width: 70; --height: 70;">
+                        <img src="${current.image}" width="70" height="70" loading="lazy" alt="${current.name}"
+                            class="img-cover">
+                    </figure>
 
-                <div>
-                    <p class="title h5 card-title">
-                        ${current.name}
-                    </p>
+                    <div>
+                        <p class="title h5 card-title">
+                            ${current.name}
+                        </p>
 
-                    <p class="card-subtitle">
-                        ${current.role}
-                    </p>
+                        <p class="card-subtitle">
+                            ${current.role}
+                        </p>
+                    </div>
                 </div>
             </div>
         `;
@@ -79,7 +82,7 @@ export default class TestimonialCarousel {
         indicators.innerHTML = this.testimonials
             .map((_, index) => `
                 <button class="indicator ${index === this.currentIndex ? 'active' : ''}" 
-                        data-index="${index}">
+                        data-index="${index}" aria-label="View testimonial ${index+1}">
                 </button>
             `)
             .join('');
@@ -105,6 +108,7 @@ export default class TestimonialCarousel {
                 // Trigger entrance animation after a brief delay
                 requestAnimationFrame(() => {
                     newTestimonial.classList.add('active');
+                    this.adjustHeight();
                 });
             }, 500); // Match this with CSS transition duration
         } else {
@@ -112,6 +116,7 @@ export default class TestimonialCarousel {
             this.container.appendChild(indicators);
             requestAnimationFrame(() => {
                 newTestimonial.classList.add('active');
+                this.adjustHeight();
             });
         }
     }
@@ -136,5 +141,30 @@ export default class TestimonialCarousel {
                 this.goToSlide(nextIndex);
             }
         }, 5000);
+    }
+    
+    // Adjust container height based on content
+    adjustHeight() {
+        const activeSlide = this.container.querySelector('.testimonial-slide.active');
+        if (activeSlide) {
+            // Get content height including testimonial content and indicators
+            const contentHeight = activeSlide.querySelector('.testimonial-content').offsetHeight;
+            const indicatorsHeight = this.container.querySelector('.testimonial-indicators').offsetHeight;
+            
+            // Set min-height based on content plus padding
+            const totalHeight = contentHeight + indicatorsHeight + 60; // Adding some padding
+            this.container.style.minHeight = `${totalHeight}px`;
+        }
+    }
+    
+    // Handle window resize events
+    setupResizeHandler() {
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                this.adjustHeight();
+            }, 250);
+        });
     }
 } 
