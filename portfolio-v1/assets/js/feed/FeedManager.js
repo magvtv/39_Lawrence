@@ -181,6 +181,12 @@ class FeedManager {
             day: 'numeric'
         });
         
+        // Truncate description to keep card heights uniform
+        const truncateDescription = (text, maxLength = 120) => {
+            if (text.length <= maxLength) return text;
+            return text.substring(0, maxLength) + '...';
+        };
+        
         return `
             <div class="feed-card">
                 ${item.image ? `
@@ -194,7 +200,7 @@ class FeedManager {
                         <span class="card-date">${dateFormatted}</span>
                     </div>
                     <h3 class="card-title">${item.title}</h3>
-                    <p class="card-text">${item.description}</p>
+                    <p class="card-text">${truncateDescription(item.description)}</p>
                     <a href="${item.link}" class="read-more-btn" target="_blank">
                         Read More
                         <ion-icon name="arrow-forward-outline"></ion-icon>
