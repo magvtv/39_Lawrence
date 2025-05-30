@@ -868,13 +868,15 @@ body.nav-active {
 .slider-list {
     display: flex;
     gap: 2.5rem;
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     padding-block: 30px;
     padding-inline-end: 30px;
     margin-inline: -15px;
     scroll-padding-left: 15px;
     scrollbar-width: none;
+    transition: transform 0.4s ease-out;
+    will-change: transform;
 }
 
 .slider-list::-webkit-scrollbar {
@@ -885,6 +887,7 @@ body.nav-active {
     min-width: calc((100% - 5rem) / 3);
     scroll-snap-align: start;
     height: 100%;
+    flex-shrink: 0;
 }
 
 .project-card {
@@ -1233,21 +1236,63 @@ textarea.input-field {
     filter: none;
 }
 
+.contact-list {
+    display: grid;
+    gap: 30px;
+}
+
 .contact-item {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     gap: 15px;
+}
+
+.contact-item .item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--bg-eerie-black);
+    color: var(--text-white);
+    font-size: 22px;
+    flex-shrink: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-item:hover .item-icon {
+    background-color: var(--text-majorelle-blue);
+    transform: translateY(-5px);
+}
+
+.contact-item-title {
+    margin-bottom: 5px;
+    color: var(--text-white);
+}
+
+.contact-item-link {
+    display: block;
+    color: var(--text-light-gray);
+    font-size: var(--fontSize-8);
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.contact-item-link:hover {
+    color: var(--text-white);
+}
+
+.contact-item-text {
+    color: var(--text-light-gray);
+    font-size: var(--fontSize-9);
+    opacity: 0.8;
 }
 
 .contact-item:not(:last-child) {
     padding-block-end: 30px;
     border-block-end: 1px solid var(--border-eerie-black);
     margin-block-end: 30px;
-}
-
-.contact-item .title {
-    color: var(--text-light-gray);
 }
 
 
@@ -1608,6 +1653,22 @@ textarea.input-field {
         opacity: 0;
     }
 
+
+
+    /**
+   * CONTACT
+   */
+
+    .contact-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-item:nth-child(2) {
+        border-block-end: none;
+        padding-block-end: 0;
+        margin-block-end: 0;
+    }
+
 }
 
 
@@ -1772,9 +1833,19 @@ textarea.input-field {
    */
 
     .contact-content {
-        grid-template-columns: 0.8fr 1fr 0.6fr;
+        grid-template-columns: 0.8fr 1fr 0.8fr;
         gap: 30px;
         align-items: center;
+    }
+
+    .contact-list {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-item:nth-child(2) {
+        border-block-end: 1px solid var(--border-eerie-black);
+        padding-block-end: 30px;
+        margin-block-end: 30px;
     }
 
 
@@ -1886,6 +1957,17 @@ textarea.input-field {
 
     .tab-content .grid-list {
         gap: 50px;
+    }
+
+
+
+    /**
+   * CONTACT
+   */
+
+    .contact-content {
+        grid-template-columns: 1fr 1.2fr 1fr;
+        gap: 40px;
     }
 
 }

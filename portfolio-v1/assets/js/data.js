@@ -1,4 +1,9 @@
-// Custom content data
+/**
+ * Data module for the portfolio website
+ * Contains project data, testimonials, and other content
+ */
+
+// Custom content data for feeds and updates
 const customData = {
     projects: [
         {
@@ -34,5 +39,60 @@ const customData = {
     ]
 };
 
-// Make data available globally
-window.customData = customData; 
+// Project data for the portfolio carousel
+export const projectsData = [
+  {
+    id: 1,
+    title: "2024 IDM Annual Symposium",
+    subtitle: "Data Science, Global Health",
+    image: "./assets/images/interview-1.jpeg",
+    link: "#",
+    description: "Annual symposium bringing together experts in infectious disease modeling"
+  },
+  {
+    id: 2,
+    title: "Official Launch of JHUB Africa",
+    subtitle: "Tech Talent, Innovation",
+    image: "./assets/images/interview-3.jpeg",
+    link: "#",
+    description: "Launch of JHUB Africa initiative to nurture tech talent across the continent"
+  },
+  {
+    id: 3,
+    title: "Humanizing Data Protection Laws",
+    subtitle: "APHRC, Data Governance",
+    image: "./assets/images/interview-2.jpeg",
+    link: "#",
+    description: "Research and advocacy work on human-centric data protection policies"
+  },
+  {
+    id: 4,
+    title: "AI for Healthcare Summit",
+    subtitle: "Healthcare Tech, AI/ML",
+    image: "./assets/images/interview-1.jpeg",
+    link: "#",
+    description: "Leading discussions on AI applications in healthcare delivery and research"
+  },
+  {
+    id: 5,
+    title: "Digital Identity Management Workshop",
+    subtitle: "Security, Digital ID",
+    image: "./assets/images/interview-3.jpeg",
+    link: "#",
+    description: "Workshop on secure and ethical digital identity management systems"
+  },
+  {
+    id: 6,
+    title: "ML Research Publication",
+    subtitle: "Machine Learning, Academic",
+    image: "./assets/images/interview-2.jpeg",
+    link: "#",
+    description: "Publication on ensemble classification methods for improved accuracy"
+  }
+];
+
+// Make customData available globally for non-module scripts
+window.customData = customData;
+
+// Export customData as well for module use
+export { customData }; 

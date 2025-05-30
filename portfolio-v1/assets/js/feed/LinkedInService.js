@@ -1,8 +1,8 @@
 class LinkedInService {
     static config = {
-        clientId: window.appConfig.linkedIn.clientId,
-        redirectUri: window.appConfig.linkedIn.redirectUri,
-        scope: window.appConfig.linkedIn.scope
+        clientId: window.appConfig?.linkedIn?.clientId || '77nmvhcib0xo2f',
+        redirectUri: window.appConfig?.linkedIn?.redirectUri || window.location.origin,
+        scope: window.appConfig?.linkedIn?.scope || 'r_liteprofile r_emailaddress w_member_social'
     };
 
     static async getPosts() {

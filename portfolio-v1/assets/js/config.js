@@ -31,4 +31,7 @@ const config = {
 };
 
 // Make config available globally
-window.appConfig = config; 
+window.appConfig = config;
+
+// Export for module use
+export default config; 

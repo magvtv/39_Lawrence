@@ -5,31 +5,31 @@ export default class TestimonialCarousel {
                 quote: "Dr. Nderu's teaching approach transformed my understanding of AI and Machine Learning. His practical methods and real-world applications made complex concepts accessible and exciting.",
                 name: "James Mwangi",
                 role: "Fourth Year Student, Computer Science",
-                image: "./assets/images/testimonials/student.jpg"
+                image: "./assets/images/benard-gakenga.jpeg"
             },
             {
                 quote: "Having collaborated with Lawrence on several Microsoft initiatives in Africa, his dedication to nurturing tech talent and fostering innovation is unmatched.",
                 name: "Sarah Chen",
                 role: "Senior Frontend Developer, Microsoft",
-                image: "./assets/images/testimonials/microsoft.jpg"
+                image: "./assets/images/interview-1.jpeg"
             },
             {
                 quote: "A brilliant mind with an exceptional ability to bridge academic theory with industry practice. His research contributions have significantly impacted our department.",
                 name: "Dr. Patricia Kamau",
                 role: "Fellow Lecturer, Computer Science Department",
-                image: "./assets/images/testimonials/lecturer.jpg"
+                image: "./assets/images/interview-2.jpeg"
             },
             {
                 quote: "Dr. Nderu's vision for African tech innovation aligns perfectly with our mission. His insights have been invaluable to our collaborative projects.",
                 name: "Hiroshi Tanaka",
                 role: "Chief Executive, JICA-PAUSTI",
-                image: "./assets/images/testimonials/executive.jpg"
+                image: "./assets/images/interview-3.jpeg"
             },
             {
                 quote: "His understanding of digital transformation and its application in African markets has been instrumental in shaping our tech initiatives.",
                 name: "Peter Ndegwa",
                 role: "Managing Director, Safaricom",
-                image: "./assets/images/testimonials/director.jpg"
+                image: "./assets/images/philosophy.jpeg"
             }
         ];
 

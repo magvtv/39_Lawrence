@@ -1,6 +1,9 @@
 import FeedManager from './FeedManager.js';
 import LinkedInService from './LinkedInService.js';
 
+// Make services available globally for non-module scripts
+window.LinkedInService = LinkedInService;
+
 // Initialize the feed when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Handle LinkedIn OAuth callback if present
@@ -11,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         LinkedInService.handleAuthCallback(code);
     }
     
-    // Initialize feed manager
-    new FeedManager();
+    // Initialize feed manager and make it available globally
+    const feedManager = new FeedManager();
+    window.feedManager = feedManager;
 }); 
