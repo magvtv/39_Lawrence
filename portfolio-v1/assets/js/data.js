@@ -11,6 +11,7 @@ const customData = {
             title: 'JHUB Africa Launch',
             description: 'Official launch of JHUB Africa, fostering tech talent and innovation in the region.',
             link: '#',
+            image: './assets/images/interview-1.jpeg',
             type: 'projects'
         },
         {
@@ -18,6 +19,7 @@ const customData = {
             title: 'Digital Identity Management Symposium',
             description: 'Leading discussions on the future of digital identity management systems.',
             link: '#',
+            image: './assets/images/interview-2.jpeg',
             type: 'projects'
         }
     ],
@@ -27,6 +29,7 @@ const customData = {
             title: 'Fuzzy Logic in Context-Aware Systems',
             description: 'Research paper on implementing fuzzy logic in modern context-aware applications.',
             link: '#',
+            image: './assets/images/philosophy.jpeg',
             type: 'publications'
         },
         {
@@ -34,7 +37,34 @@ const customData = {
             title: 'Digital Identity Management Systems Review',
             description: 'Comprehensive review of current digital identity management system models.',
             link: '#',
+            image: './assets/images/interview-3.jpeg',
             type: 'publications'
+        }
+    ],
+    linkedin: [
+        {
+            date: '2024-04-26',
+            title: 'JKUAT, UoN Lead Kenyan Institutions in AI Research',
+            description: 'The future of AI is here, and we are excited to be at the forefront of this transformative journey. Postgraduate research in AI must push the boundaries of innovation and discovery, focusing on advancing knowledge and equipping the next generation with skills to become leaders and entrepreneurs in the AI space.',
+            link: 'https://www.linkedin.com/posts/dr-lawrence-nderu_jkuat-uon-lead-kenyan-institutions-in-ai-activity-7221058501840687104-V6dO',
+            image: './assets/images/interview-1.jpeg',
+            type: 'linkedin'
+        },
+        {
+            date: '2023-05-30',
+            title: 'Agent-Based Modeling Training at University of Nairobi',
+            description: 'Facilitating a training session on Agent-Based Modeling at the University of Nairobi (UoN). This incredible opportunity allowed me to work alongside brilliant minds and eager learners, diving deep into the complexities of modelling infectious diseases. The African Population and Health Research Center (APHRC), CEMA, Gates Foundation, and JKUAT coordinated the training.',
+            link: 'https://www.linkedin.com/posts/dr-lawrence-nderu_rethinking-health-cema-africa-activity-7186016660200243200-yML1',
+            image: './assets/images/interview-2.jpeg',
+            type: 'linkedin'
+        },
+        {
+            date: '2023-03-15',
+            title: 'AI-Powered Innovation in Healthcare',
+            description: 'Exploring how artificial intelligence is revolutionizing healthcare delivery in Africa. From diagnostics to treatment recommendations, AI is helping overcome resource limitations and bring quality healthcare to underserved communities.',
+            link: 'https://www.linkedin.com/in/dr-lawrence-nderu',
+            image: './assets/images/interview-3.jpeg',
+            type: 'linkedin'
         }
     ]
 };

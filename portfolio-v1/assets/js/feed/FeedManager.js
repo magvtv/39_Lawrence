@@ -51,37 +51,43 @@ class FeedManager {
             
             let items = [];
             
-            // Get LinkedIn posts if needed
+            // Get LinkedIn posts
             if (this.currentTab === 'all' || this.currentTab === 'linkedin') {
-                try {
-                    const linkedInPosts = await window.LinkedInService.getPosts();
-                    items = items.concat(linkedInPosts);
-                } catch (error) {
-                    console.error('Error fetching LinkedIn posts:', error);
-                    
-                    // Add fallback LinkedIn posts
-                    items = items.concat([
-                        {
-                            type: 'linkedin',
-                            title: 'Recent LinkedIn Update',
-                            description: 'Excited to share updates about our latest initiatives in technology education.',
-                            date: '2023-05-30',
-                            link: '#',
-                            image: './assets/images/interview-1.jpeg'
-                        },
-                        {
-                            type: 'linkedin',
-                            title: 'AI Research Progress',
-                            description: 'Making significant progress in our AI research projects. Looking forward to sharing more details soon.',
-                            date: '2023-05-29',
-                            link: '#',
-                            image: './assets/images/interview-2.jpeg'
-                        }
-                    ]);
+                // First try to get posts from customData
+                if (window.customData && window.customData.linkedin && window.customData.linkedin.length > 0) {
+                    items = items.concat(window.customData.linkedin);
+                } else {
+                    // Fallback to LinkedInService
+                    try {
+                        const linkedInPosts = await window.LinkedInService.getPosts();
+                        items = items.concat(linkedInPosts);
+                    } catch (error) {
+                        console.error('Error fetching LinkedIn posts:', error);
+                        
+                        // Add fallback LinkedIn posts
+                        items = items.concat([
+                            {
+                                type: 'linkedin',
+                                title: 'Recent LinkedIn Update',
+                                description: 'Excited to share updates about our latest initiatives in technology education.',
+                                date: '2023-05-30',
+                                link: '#',
+                                image: './assets/images/interview-1.jpeg'
+                            },
+                            {
+                                type: 'linkedin',
+                                title: 'AI Research Progress',
+                                description: 'Making significant progress in our AI research projects. Looking forward to sharing more details soon.',
+                                date: '2023-05-29',
+                                link: '#',
+                                image: './assets/images/interview-2.jpeg'
+                            }
+                        ]);
+                    }
                 }
             }
 
-            // Get custom content if needed
+            // Get project content
             if (this.currentTab === 'all' || this.currentTab === 'projects') {
                 if (window.customData && window.customData.projects) {
                     const projectItems = window.customData.projects.map(project => ({
@@ -104,6 +110,7 @@ class FeedManager {
                 }
             }
 
+            // Get publication content
             if (this.currentTab === 'all' || this.currentTab === 'publications') {
                 if (window.customData && window.customData.publications) {
                     const publicationItems = window.customData.publications.map(pub => ({
@@ -168,6 +175,12 @@ class FeedManager {
     }
 
     createItemElement(item) {
+        const dateFormatted = new Date(item.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        
         return `
             <div class="feed-card">
                 ${item.image ? `
@@ -178,7 +191,7 @@ class FeedManager {
                 <div class="card-content">
                     <div class="meta-wrapper">
                         <span class="card-category">${this.getSourceLabel(item.type)}</span>
-                        <span class="card-date">${new Date(item.date).toLocaleDateString()}</span>
+                        <span class="card-date">${dateFormatted}</span>
                     </div>
                     <h3 class="card-title">${item.title}</h3>
                     <p class="card-text">${item.description}</p>
