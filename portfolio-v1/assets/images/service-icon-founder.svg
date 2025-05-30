@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="39" stroke="white" stroke-width="2"/>
+  <!-- Building/hub icon -->
+  <rect x="25" y="35" width="30" height="25" stroke="white" stroke-width="2"/>
+  <!-- Roof/leadership -->
+  <path d="M20 35L40 20L60 35" stroke="white" stroke-width="2"/>
+  <!-- Windows -->
+  <rect x="30" y="40" width="6" height="6" fill="white"/>
+  <rect x="44" y="40" width="6" height="6" fill="white"/>
+  <rect x="30" y="50" width="6" height="6" fill="white"/>
+  <!-- Door -->
+  <rect x="44" y="50" width="6" height="10" fill="white"/>
+  <!-- Innovation rays -->
+  <line x1="40" y1="15" x2="40" y2="10" stroke="white" stroke-width="1.5"/>
+  <line x1="48" y1="17" x2="52" y2="13" stroke="white" stroke-width="1.5"/>
+  <line x1="32" y1="17" x2="28" y2="13" stroke="white" stroke-width="1.5"/>
+  <line x1="55" y1="24" x2="60" y2="22" stroke="white" stroke-width="1.5"/>
+  <line x1="25" y1="24" x2="20" y2="22" stroke="white" stroke-width="1.5"/>
+  <!-- Foundation -->
+  <rect x="23" y="60" width="34" height="3" fill="white"/>
+  <!-- Flag -->
+  <line x1="60" y1="45" x2="60" y2="30" stroke="white" stroke-width="1.5"/>
+  <path d="M60 30L68 34L60 38" fill="white"/>
+</svg> 

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="39" stroke="white" stroke-width="2"/>
+  <!-- Graduation cap -->
+  <path d="M40 22L18 32L40 42L62 32L40 22Z" fill="white"/>
+  <path d="M28 36V48C28 48 34 54 40 54C46 54 52 48 52 48V36" stroke="white" stroke-width="2"/>
+  <!-- Tassel -->
+  <path d="M40 42V54" stroke="white" stroke-width="2"/>
+  <circle cx="40" cy="56" r="2" fill="white"/>
+  <!-- Book -->
+  <rect x="26" y="38" width="28" height="4" fill="white"/>
+</svg> 

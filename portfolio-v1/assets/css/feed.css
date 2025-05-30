@@ -3,40 +3,40 @@
 \*-----------------------------------*/
 
 .feed {
-    border-block: 1px solid var(--border-eerie-black);
-    margin-block-start: -30px; /* Push section up */
+    border-block: 0.0625em solid var(--border-eerie-black); /* 1px */
+    margin-block-start: -1.875em; /* -30px */
 }
 
 .feed .section-title {
-    margin-block-end: 60px;
+    margin-block-end: 3.75em; /* 60px */
 }
 
 .feed-content {
-    padding: 40px;
-    border: 1px solid var(--border-eerie-black);
+    padding: 2.5em; /* 40px */
+    border: 0.0625em solid var(--border-eerie-black); /* 1px */
     border-radius: 1rem;
-    max-width: 1400px;
+    max-width: 87.5em; /* 1400px */
     margin-inline: auto;
 }
 
 .feed-tabs {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-block-end: 40px;
-    padding-block-end: 20px;
-    border-block-end: 1px solid var(--border-eerie-black);
+    gap: 0.9375em; /* 15px */
+    margin-block-end: 2.5em; /* 40px */
+    padding-block-end: 1.25em; /* 20px */
+    border-block-end: 0.0625em solid var(--border-eerie-black); /* 1px */
 }
 
 .feed-tabs .tab-btn {
-    padding: 15px;
+    padding: 0.9375em; /* 15px */
     border: none;
     background: var(--bg-black);
     color: var(--text-light-gray);
     transition: var(--transition-1);
     cursor: pointer;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 0.5em; /* 8px */
     font-size: var(--fontSize-8);
     font-family: var(--fontFamily-roboto);
 }
@@ -50,9 +50,9 @@
 .feed-items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    margin-block-end: 40px;
-    min-height: 200px; /* Ensure space is reserved */
+    gap: 1.875em; /* 30px */
+    margin-block-end: 2.5em; /* 40px */
+    min-height: 12.5em; /* 200px */
 }
 
 .feed-items:empty {
@@ -67,15 +67,15 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    max-height: 500px; /* Set maximum height for all cards */
+    max-height: 31.25em; /* 500px */
 }
 
 .feed-card .card-banner {
     position: relative;
     width: 100%;
-    height: 200px; /* Fixed height for all card banners */
+    height: 12.5em; /* 200px */
     overflow: hidden;
-    flex-shrink: 0; /* Prevent banner from shrinking */
+    flex-shrink: 0;
 }
 
 .feed-card .card-banner img {
@@ -91,21 +91,21 @@
 }
 
 .feed-card .card-content {
-    padding: 25px;
+    padding: 1.5625em; /* 25px */
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     background: var(--bg-eerie-black);
-    height: 280px; /* Fixed height for content area */
-    overflow: hidden; /* Prevent content overflow */
+    height: 17.5em; /* 280px */
+    overflow: hidden;
 }
 
 .feed-card .meta-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
+    gap: 0.625em; /* 10px */
+    margin-bottom: 0.9375em; /* 15px */
 }
 
 .feed-card .card-category {
@@ -113,7 +113,7 @@
     font-size: var(--fontSize-8);
     font-family: var(--fontFamily-roboto);
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.0625em; /* 1px */
 }
 
 .feed-card .card-date {
@@ -127,7 +127,7 @@
     font-size: var(--fontSize-6);
     font-family: var(--fontFamily-recoleta);
     line-height: 1.4;
-    margin-bottom: 15px;
+    margin-bottom: 0.9375em; /* 15px */
     transition: color 0.3s ease;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -135,7 +135,7 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 2.8em; /* Fixed height for title (2 lines) */
+    height: 2.8em;
 }
 
 .feed-card .card-title:hover {
@@ -147,14 +147,14 @@
     font-size: var(--fontSize-8);
     font-family: var(--fontFamily-roboto);
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em; /* 20px */
     display: -webkit-box;
     -webkit-line-clamp: 3;
     line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 4.8em; /* Fixed height for description (3 lines) */
+    height: 4.8em;
 }
 
 .feed-card .read-more-btn {
@@ -165,7 +165,7 @@
     font-weight: var(--weight-medium);
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 0.3125em; /* 5px */
     transition: color 0.3s ease;
 }
 
@@ -182,7 +182,7 @@
     display: none;
     justify-content: center;
     align-items: center;
-    min-height: 200px;
+    min-height: 12.5em; /* 200px */
 }
 
 .feed-loading.active {
@@ -193,8 +193,8 @@
 .feed-error {
     display: none;
     background-color: var(--bg-eerie-black);
-    padding: 30px;
-    border-radius: 8px;
+    padding: 1.875em; /* 30px */
+    border-radius: 0.5em; /* 8px */
     text-align: center;
 }
 
@@ -205,27 +205,27 @@
 .feed-error p {
     color: var(--text-light-gray);
     font-family: var(--fontFamily-roboto);
-    margin-block-end: 20px;
+    margin-block-end: 1.25em; /* 20px */
 }
 
 /* Toast Notifications */
 .feed-toast {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 1.875em; /* 30px */
+    right: 1.875em; /* 30px */
     background-color: var(--bg-eerie-black);
     color: var(--text-light-gray);
-    padding: 15px 25px;
+    padding: 0.9375em 1.5625em; /* 15px 25px */
     border-radius: var(--radius-pill);
     font-family: var(--fontFamily-recoleta);
     font-size: var(--fontSize-8);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.25em 0.75em rgba(0, 0, 0, 0.15); /* 4px 12px */
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.625em; /* 10px */
     z-index: 100;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(1.25em); /* 20px */
     transition: all 0.3s ease;
 }
 
@@ -237,7 +237,7 @@
 .feed-toast .retry-btn {
     background: var(--bg-white);
     color: var(--text-black);
-    padding: 5px 15px;
+    padding: 0.3125em 0.9375em; /* 5px 15px */
     border-radius: var(--radius-pill);
     font-size: var(--fontSize-9);
     cursor: pointer;
@@ -250,10 +250,10 @@
 
 /* Loading Spinner */
 .loading-spinner {
-    width: 40px;
-    height: 40px;
-    border: 3px solid var(--border-eerie-black);
-    border-top: 3px solid var(--text-majorelle-blue);
+    width: 2.5em; /* 40px */
+    height: 2.5em; /* 40px */
+    border: 0.1875em solid var(--border-eerie-black); /* 3px */
+    border-top: 0.1875em solid var(--text-majorelle-blue); /* 3px */
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -269,19 +269,19 @@
 
 @media (min-width: 575px) {
     .feed-content {
-        padding: 60px 40px;
+        padding: 3.75em 2.5em; /* 60px 40px */
     }
 }
 
 @media (min-width: 992px) {
     .feed-content {
-        padding: 80px 60px;
+        padding: 5em 3.75em; /* 80px 60px */
     }
 }
 
 @media (min-width: 1200px) {
     .feed-content {
-        padding: 100px 80px;
+        padding: 6.25em 5em; /* 100px 80px */
     }
     
     .feed-item .title {
@@ -301,15 +301,15 @@
     }
     
     .feed-content {
-        padding: 20px;
+        padding: 1.25em; /* 20px */
     }
     
     .feed-card .card-banner {
-        height: 180px;
+        height: 11.25em; /* 180px */
     }
     
     .feed-card .card-content {
-        height: 250px;
+        height: 15.625em; /* 250px */
     }
 }
 
@@ -319,20 +319,20 @@
     }
     
     .feed-card .card-banner {
-        height: 160px;
+        height: 10em; /* 160px */
     }
     
     .feed-card .card-content {
-        padding: 20px;
-        height: 230px;
+        padding: 1.25em; /* 20px */
+        height: 14.375em; /* 230px */
     }
 }
 
 @media (max-width: 575px) {
     .feed-toast {
-        left: 20px;
-        right: 20px;
-        bottom: 20px;
+        left: 1.25em; /* 20px */
+        right: 1.25em; /* 20px */
+        bottom: 1.25em; /* 20px */
         text-align: center;
         flex-direction: column;
     }

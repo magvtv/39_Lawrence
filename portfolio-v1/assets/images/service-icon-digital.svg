@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="40" cy="40" r="39" stroke="white" stroke-width="2"/>
+  <!-- Network nodes -->
+  <circle cx="40" cy="40" r="6" fill="white"/>
+  <circle cx="20" cy="30" r="4" fill="white"/>
+  <circle cx="60" cy="30" r="4" fill="white"/>
+  <circle cx="20" cy="50" r="4" fill="white"/>
+  <circle cx="60" cy="50" r="4" fill="white"/>
+  <!-- Connection lines -->
+  <line x1="24" y1="30" x2="36" y2="37" stroke="white" stroke-width="2"/>
+  <line x1="56" y1="30" x2="44" y2="37" stroke="white" stroke-width="2"/>
+  <line x1="24" y1="50" x2="36" y2="43" stroke="white" stroke-width="2"/>
+  <line x1="56" y1="50" x2="44" y2="43" stroke="white" stroke-width="2"/>
+  <!-- Digital pulse waves -->
+  <path d="M15 20C25 20 25 15 35 15C45 15 45 20 55 20C65 20 65 15 75 15" stroke="white" stroke-width="1.5" stroke-dasharray="2 2"/>
+  <path d="M5 65C15 65 15 60 25 60C35 60 35 65 45 65C55 65 55 60 65 60" stroke="white" stroke-width="1.5" stroke-dasharray="2 2"/>
+</svg> 
