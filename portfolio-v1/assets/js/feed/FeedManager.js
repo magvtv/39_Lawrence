@@ -2,7 +2,7 @@ class FeedManager {
     constructor() {
         this.page = 1;
         this.itemsPerPage = 6;
-        this.currentTab = 'all';
+        this.currentTab = 'articles';
         this.init();
     }
 
@@ -51,58 +51,78 @@ class FeedManager {
             
             let items = [];
             
-            // Get LinkedIn posts
-            if (this.currentTab === 'all' || this.currentTab === 'linkedin') {
-                // First try to get posts from customData
-                if (window.customData && window.customData.linkedin && window.customData.linkedin.length > 0) {
-                    items = items.concat(window.customData.linkedin);
-                } else {
-                    // Fallback to LinkedInService
-                    try {
+            // Get LinkedIn content
+            if (this.currentTab === 'linkedin') {
+                try {
+                    // Check if LinkedInService is available
+                    if (typeof LinkedInService !== 'undefined') {
+                        console.log('Using LinkedInService from module import');
+                        const linkedInPosts = await LinkedInService.getPosts();
+                        items = items.concat(linkedInPosts);
+                    } else if (window.LinkedInService) {
+                        console.log('Using LinkedInService from window object');
                         const linkedInPosts = await window.LinkedInService.getPosts();
                         items = items.concat(linkedInPosts);
-                    } catch (error) {
-                        console.error('Error fetching LinkedIn posts:', error);
-                        
-                        // Add fallback LinkedIn posts
-                        items = items.concat([
-                            {
-                                type: 'linkedin',
-                                title: 'Recent LinkedIn Update',
-                                description: 'Excited to share updates about our latest initiatives in technology education.',
-                                date: '2023-05-30',
-                                link: '#',
-                                image: './assets/images/interview-1.jpeg'
-                            },
-                            {
-                                type: 'linkedin',
-                                title: 'AI Research Progress',
-                                description: 'Making significant progress in our AI research projects. Looking forward to sharing more details soon.',
-                                date: '2023-05-29',
-                                link: '#',
-                                image: './assets/images/interview-2.jpeg'
-                            }
-                        ]);
+                    } else {
+                        console.error('LinkedInService not available');
+                        this.showError('LinkedIn service unavailable');
+                        // Fallback to static data if available
+                        if (window.customData && window.customData.linkedin) {
+                            items = items.concat(window.customData.linkedin);
+                        } else {
+                            // Show empty state if no data is available
+                            if (loadingElement) loadingElement.classList.remove('active');
+                            this.displayEmptyState('No LinkedIn data available. Please try again later.');
+                            return;
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error fetching LinkedIn posts:', error);
+                    this.showError('Failed to load LinkedIn data');
+                    // Fallback to static data if available
+                    if (window.customData && window.customData.linkedin) {
+                        items = items.concat(window.customData.linkedin);
+                    } else {
+                        // Show empty state if no data is available
+                        if (loadingElement) loadingElement.classList.remove('active');
+                        this.displayEmptyState('No LinkedIn data available. Please try again later.');
+                        return;
                     }
                 }
             }
-
-            // Get project content
-            if (this.currentTab === 'all' || this.currentTab === 'projects') {
-                if (window.customData && window.customData.projects) {
-                    const projectItems = window.customData.projects.map(project => ({
-                        ...project,
-                        type: 'projects'
+            
+            // Get articles content
+            if (this.currentTab === 'articles') {
+                if (window.customData && window.customData.articles) {
+                    const articleItems = window.customData.articles.map(article => ({
+                        ...article,
+                        type: 'articles'
                     }));
-                    items = items.concat(projectItems);
+                    items = items.concat(articleItems);
                 } else {
-                    // Add fallback project
+                    // Add fallback articles
                     items = items.concat([
                         {
-                            type: 'projects',
-                            title: 'JHUB Africa Initiative',
-                            description: 'Launching a new tech hub for emerging talent in Africa focused on AI and blockchain technologies.',
-                            date: '2023-03-15',
+                            type: 'articles',
+                            title: 'Machine Learning in Healthcare',
+                            description: 'Exploring how ML algorithms are transforming diagnostic procedures and patient care in modern healthcare settings.',
+                            date: '2023-06-15',
+                            link: '#',
+                            image: './assets/images/interview-1.jpeg'
+                        },
+                        {
+                            type: 'articles',
+                            title: 'Digital Identity Systems',
+                            description: 'A comprehensive review of modern approaches to digital identity management and their implications for privacy.',
+                            date: '2023-05-20',
+                            link: '#',
+                            image: './assets/images/interview-2.jpeg'
+                        },
+                        {
+                            type: 'articles',
+                            title: 'Fuzzy Logic in Decision Systems',
+                            description: 'How fuzzy logic principles are being applied in decision support systems across various industries.',
+                            date: '2023-04-10',
                             link: '#',
                             image: './assets/images/interview-3.jpeg'
                         }
@@ -110,24 +130,43 @@ class FeedManager {
                 }
             }
 
-            // Get publication content
-            if (this.currentTab === 'all' || this.currentTab === 'publications') {
-                if (window.customData && window.customData.publications) {
-                    const publicationItems = window.customData.publications.map(pub => ({
-                        ...pub,
-                        type: 'publications'
+            // Get favorites content
+            if (this.currentTab === 'favorites') {
+                if (window.customData && window.customData.favorites) {
+                    const favoriteItems = window.customData.favorites.map(favorite => ({
+                        ...favorite,
+                        type: 'favorites'
                     }));
-                    items = items.concat(publicationItems);
+                    items = items.concat(favoriteItems);
                 } else {
-                    // Add fallback publication
+                    // Add fallback favorites
                     items = items.concat([
                         {
-                            type: 'publications',
-                            title: 'Fuzzy Logic in Healthcare Systems',
-                            description: 'A comprehensive review of fuzzy logic applications in modern healthcare diagnostic systems.',
-                            date: '2023-03-01',
+                            type: 'favorites',
+                            title: 'The Future of AI Ethics',
+                            description: 'A thought-provoking discussion on the ethical considerations in artificial intelligence development.',
+                            date: '2023-06-10',
                             link: '#',
-                            image: './assets/images/philosophy.jpeg'
+                            image: './assets/images/philosophy.jpeg',
+                            source: 'MIT Technology Review'
+                        },
+                        {
+                            type: 'favorites',
+                            title: 'Blockchain in Education',
+                            description: 'How blockchain technology can revolutionize credential verification and educational record-keeping.',
+                            date: '2023-05-05',
+                            link: '#',
+                            image: './assets/images/interview-3.jpeg',
+                            source: 'Harvard Business Review'
+                        },
+                        {
+                            type: 'favorites',
+                            title: 'The Rise of African Tech Hubs',
+                            description: 'An analysis of the growing tech ecosystem across African nations and its global impact.',
+                            date: '2023-04-20',
+                            link: '#',
+                            image: './assets/images/interview-2.jpeg',
+                            source: 'TechCrunch'
                         }
                     ]);
                 }
@@ -142,7 +181,7 @@ class FeedManager {
             this.displayItems(items, reset);
         } catch (error) {
             console.error('Error loading content:', error);
-            this.showError('Failed to load content');
+            this.showError('Loading failed');
         }
     }
 
@@ -175,35 +214,36 @@ class FeedManager {
     }
 
     createItemElement(item) {
-        const dateFormatted = new Date(item.date).toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric'
+        const date = new Date(item.date).toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
         });
         
-        // Truncate description to keep card heights uniform
         const truncateDescription = (text, maxLength = 120) => {
+            if (!text) return '';
             if (text.length <= maxLength) return text;
-            return text.substring(0, maxLength) + '...';
+            return text.substr(0, maxLength) + '...';
         };
+        
+        const sourceLabel = item.type === 'favorites' && item.source 
+            ? item.source 
+            : this.getSourceLabel(item.type);
         
         return `
             <div class="feed-card">
-                ${item.image ? `
-                    <figure class="card-banner">
-                        <img src="${item.image}" alt="${item.title}" class="img-cover">
-                    </figure>
-                ` : ''}
+                <div class="card-banner">
+                    <img src="${item.image || './assets/images/interview-1.jpeg'}" alt="${item.title}">
+                </div>
                 <div class="card-content">
                     <div class="meta-wrapper">
-                        <span class="card-category">${this.getSourceLabel(item.type)}</span>
-                        <span class="card-date">${dateFormatted}</span>
+                        <span class="card-category">${sourceLabel}</span>
+                        <span class="card-date">${date}</span>
                     </div>
-                    <h3 class="card-title">${item.title}</h3>
+                    <h3 class="card-title"><a href="${item.link || '#'}">${item.title}</a></h3>
                     <p class="card-text">${truncateDescription(item.description)}</p>
-                    <a href="${item.link}" class="read-more-btn" target="_blank">
-                        Read More
-                        <ion-icon name="arrow-forward-outline"></ion-icon>
+                    <a href="${item.link || '#'}" class="read-more-btn">
+                        Read More <ion-icon name="arrow-forward-outline"></ion-icon>
                     </a>
                 </div>
             </div>
@@ -212,12 +252,12 @@ class FeedManager {
 
     getSourceLabel(type) {
         switch (type) {
+            case 'articles':
+                return 'Article';
+            case 'favorites':
+                return 'Favorite';
             case 'linkedin':
                 return 'LinkedIn';
-            case 'projects':
-                return 'Project';
-            case 'publications':
-                return 'Publication';
             default:
                 return 'Update';
         }
@@ -232,13 +272,13 @@ class FeedManager {
             existingToast.remove();
         }
         
-        // Create and show new toast
+        // Create and show new toast with concise message
         const toast = document.createElement('div');
         toast.className = 'feed-toast';
         toast.innerHTML = `
-            <span>${message}</span>
+            <span>Loading failed</span>
             <button class="retry-btn">
-                Try Again
+                Retry
             </button>
         `;
         
@@ -261,6 +301,20 @@ class FeedManager {
             toast.classList.remove('show');
             setTimeout(() => toast.remove(), 300);
         }, 5000);
+    }
+
+    displayEmptyState(message) {
+        if (!this.feedContainer) return;
+        
+        this.feedContainer.innerHTML = `
+            <div class="feed-empty">
+                <p>${message || 'No items to display.'}</p>
+            </div>
+        `;
+        
+        if (this.loadMoreBtn) {
+            this.loadMoreBtn.style.display = 'none';
+        }
     }
 }
 

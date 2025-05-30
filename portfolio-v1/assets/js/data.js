@@ -66,6 +66,61 @@ const customData = {
             image: './assets/images/interview-3.jpeg',
             type: 'linkedin'
         }
+    ],
+    articles: [
+        {
+            type: 'articles',
+            title: 'Machine Learning in Healthcare',
+            description: 'Exploring how ML algorithms are transforming diagnostic procedures and patient care in modern healthcare settings.',
+            date: '2023-06-15',
+            link: 'https://www.example.com/ml-healthcare',
+            image: './assets/images/interview-1.jpeg'
+        },
+        {
+            type: 'articles',
+            title: 'Digital Identity Systems',
+            description: 'A comprehensive review of modern approaches to digital identity management and their implications for privacy.',
+            date: '2023-05-20',
+            link: 'https://www.example.com/digital-identity',
+            image: './assets/images/interview-2.jpeg'
+        },
+        {
+            type: 'articles',
+            title: 'Fuzzy Logic in Decision Systems',
+            description: 'How fuzzy logic principles are being applied in decision support systems across various industries.',
+            date: '2023-04-10',
+            link: 'https://www.example.com/fuzzy-logic',
+            image: './assets/images/interview-3.jpeg'
+        }
+    ],
+    favorites: [
+        {
+            type: 'favorites',
+            title: 'The Future of AI Ethics',
+            description: 'A thought-provoking discussion on the ethical considerations in artificial intelligence development.',
+            date: '2023-06-10',
+            link: 'https://www.mittr.com/ai-ethics',
+            image: './assets/images/philosophy.jpeg',
+            source: 'MIT Technology Review'
+        },
+        {
+            type: 'favorites',
+            title: 'Blockchain in Education',
+            description: 'How blockchain technology can revolutionize credential verification and educational record-keeping.',
+            date: '2023-05-05',
+            link: 'https://www.hbr.org/blockchain-education',
+            image: './assets/images/interview-3.jpeg',
+            source: 'Harvard Business Review'
+        },
+        {
+            type: 'favorites',
+            title: 'The Rise of African Tech Hubs',
+            description: 'An analysis of the growing tech ecosystem across African nations and its global impact.',
+            date: '2023-04-20',
+            link: 'https://www.techcrunch.com/african-tech-hubs',
+            image: './assets/images/interview-2.jpeg',
+            source: 'TechCrunch'
+        }
     ]
 };
 
