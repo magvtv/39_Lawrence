@@ -40,6 +40,8 @@ export default class TestimonialCarousel {
     }
 
     init() {
+        // Set responsive avatar size based on viewport
+        this.adjustAvatarSize();
         this.render();
         this.startRotation();
         this.setupResizeHandler();
@@ -58,9 +60,8 @@ export default class TestimonialCarousel {
                 </blockquote>
 
                 <div class="profile-card">
-                    <figure class="card-banner img-holder" style="--width: 70; --height: 70;">
-                        <img src="${current.image}" width="70" height="70" loading="lazy" alt="${current.name}"
-                            class="img-cover">
+                    <figure class="card-banner img-holder" style="--width: var(--avatar-width, 2.5em); --height: var(--avatar-height, 2.5em);">
+                        <img src="${current.image}" class="img-cover" loading="lazy" alt="${current.name}">
                     </figure>
 
                     <div>
@@ -109,6 +110,7 @@ export default class TestimonialCarousel {
                 requestAnimationFrame(() => {
                     newTestimonial.classList.add('active');
                     this.adjustHeight();
+                    this.adjustAvatarSize();
                 });
             }, 500); // Match this with CSS transition duration
         } else {
@@ -117,6 +119,7 @@ export default class TestimonialCarousel {
             requestAnimationFrame(() => {
                 newTestimonial.classList.add('active');
                 this.adjustHeight();
+                this.adjustAvatarSize();
             });
         }
     }
@@ -157,6 +160,25 @@ export default class TestimonialCarousel {
         }
     }
     
+    // Adjust avatar size based on viewport width
+    adjustAvatarSize() {
+        const root = document.documentElement;
+        
+        if (window.innerWidth >= 1200) {
+            // Large viewport
+            root.style.setProperty('--avatar-width', '3.5em');
+            root.style.setProperty('--avatar-height', '3.5em');
+        } else if (window.innerWidth >= 768) {
+            // Medium viewport
+            root.style.setProperty('--avatar-width', '3em');
+            root.style.setProperty('--avatar-height', '3em');
+        } else {
+            // Small viewport
+            root.style.setProperty('--avatar-width', '2.5em');
+            root.style.setProperty('--avatar-height', '2.5em');
+        }
+    }
+    
     // Handle window resize events
     setupResizeHandler() {
         let resizeTimer;
@@ -164,6 +186,7 @@ export default class TestimonialCarousel {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(() => {
                 this.adjustHeight();
+                this.adjustAvatarSize();
             }, 250);
         });
     }
