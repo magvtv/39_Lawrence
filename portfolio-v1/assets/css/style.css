@@ -889,7 +889,7 @@ body.nav-active {
 
 .project .section-title {
     font-family: var(--fontFamily-recoleta);
-    margin-block-end: 1.875em; /* 30px */
+    margin-block-end: 1em; /* 16px */
 }
 
 .project .container {
@@ -1102,7 +1102,7 @@ body.nav-active {
 }
 
 .testi .section-title {
-    margin-block-end: 3em; /* 48x */
+    margin-block-end: 2em; /* 48x */
     font-size: var(--fontSize-3);
     position: relative;
 }
@@ -1287,7 +1287,7 @@ body.nav-active {
 
 .contact .section-title {
     font-size: var(--fontSize-1);
-    margin-block-end: 1.5625em; /* 25px */
+    margin-block-end: 0.75em; /* 25px */
 }
 
 .contact-content {
@@ -1384,6 +1384,28 @@ textarea.input-field {
     padding-block-end: 1.875em; /* 30px */
     border-block-end: 0.0625em solid var(--border-eerie-black); /* 1px */
     margin-block-end: 1.875em; /* 30px */
+}
+
+.contact-item-link.highlighted {
+    color: var(--text-white);
+    font-weight: var(--weight-medium);
+    background-color: var(--bg-eerie-black);
+    padding: 0.3125em 0.625em;
+    border-radius: 0.25em;
+    animation: pulse 1.5s ease-in-out infinite;
+    box-shadow: 0 0 0.625em rgba(255, 255, 255, 0.2);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 
@@ -2152,4 +2174,39 @@ textarea.input-field {
         text-align: center;
         justify-content: center;
     }
+}
+
+/* Reveal Number Link */
+.reveal-number {
+    color: var(--text-majorelle-blue);
+    position: relative;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    padding: 0.3125em 0.625em; /* 5px 10px */
+    border: 0.0625em solid var(--border-eerie-black); /* 1px */
+    border-radius: 0.25em; /* 4px */
+    background-color: var(--bg-eerie-black);
+    display: inline-block;
+}
+
+.reveal-number::after {
+    content: '';
+    position: absolute;
+    bottom: -0.125em; /* -2px */
+    left: 0;
+    width: 100%;
+    height: 0.0625em; /* 1px */
+    background-color: var(--text-majorelle-blue);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.reveal-number:hover {
+    color: var(--text-white);
+    background-color: var(--bg-smoky-black);
+}
+
+.reveal-number:hover::after {
+    transform: scaleX(1);
 }
