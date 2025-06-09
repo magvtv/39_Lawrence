@@ -173,6 +173,38 @@ export const projectsData = [
     image: "./assets/images/interview-2.jpeg",
     link: "#",
     description: "Publication on ensemble classification methods for improved accuracy"
+  },
+  {
+    id: 7,
+    title: "African AI Forum 2024",
+    subtitle: "Technology, Leadership",
+    image: "./assets/images/philosophy.jpeg",
+    link: "#",
+    description: "Panel discussion on the future of AI development and implementation across Africa"
+  },
+  {
+    id: 8,
+    title: "Digital Identity Systems Conference",
+    subtitle: "Privacy, Security",
+    image: "./assets/images/interview-1.jpeg",
+    link: "#",
+    description: "International conference on modern approaches to secure digital identity systems"
+  },
+  {
+    id: 9,
+    title: "University Research Grant Award",
+    subtitle: "Academic Funding, Research",
+    image: "./assets/images/interview-3.jpeg",
+    link: "#",
+    description: "Secured major research grant for innovative work in machine learning applications"
+  },
+  {
+    id: 10,
+    title: "Tech Entrepreneurship Masterclass",
+    subtitle: "Innovation, Startups",
+    image: "./assets/images/interview-2.jpeg",
+    link: "#",
+    description: "Hosting a masterclass for aspiring tech entrepreneurs on building sustainable businesses"
   }
 ];
 

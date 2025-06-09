@@ -44,6 +44,12 @@ export default class ProjectsCarousel {
       this.checkOverflow();
       this.resetScroll();
     });
+    
+    // Also recalculate after all images have loaded for better accuracy
+    window.addEventListener('load', () => {
+      this.calculateDimensions();
+      this.checkOverflow();
+    });
   }
 
   /**
@@ -70,20 +76,21 @@ export default class ProjectsCarousel {
     listItem.className = 'slider-item';
     
     listItem.innerHTML = `
-      <div class="project-card text-center">
-        <div class="card-banner img-holder has-before">
-          <img src="${project.image}" loading="lazy"
+      <div class="project-card">
+        <div class="card-banner">
+          <img src="${project.image}" width="380" height="300" loading="lazy"
               alt="${project.title}" class="img-cover">
-          <a href="${project.link}" class="btn btn:hover">
-            <span class="span">Project Details</span>
-            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-          </a>
         </div>
         <div class="card-content">
           <p class="card-subtitle">${project.subtitle}</p>
-          <h3 class="title h3">
-            <a href="${project.link}" class="card-title">${project.title}</a>
+          <h3 class="card-title">
+            <a href="${project.link}">${project.title}</a>
           </h3>
+          <p class="card-text">${project.description}</p>
+          <a href="${project.link}" class="btn btn:hover">
+            <span class="span">View Project</span>
+            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+          </a>
         </div>
       </div>
     `;
@@ -100,20 +107,22 @@ export default class ProjectsCarousel {
     }
     
     const firstItem = this.sliderList.children[0];
-    const style = window.getComputedStyle(firstItem);
-    const marginRight = parseInt(style.marginRight, 10) || 0;
+    // Get the actual item width including margins
+    const computedStyle = window.getComputedStyle(firstItem);
+    const marginRight = parseFloat(computedStyle.marginRight) || 0;
+    const marginLeft = parseFloat(computedStyle.marginLeft) || 0;
     
-    this.itemWidth = firstItem.offsetWidth + marginRight;
+    // Include margins in the item width calculation
+    this.itemWidth = firstItem.offsetWidth + marginRight + marginLeft;
     
     // Calculate maximum scroll amount
     const containerWidth = this.container.clientWidth;
     const totalWidth = this.sliderList.scrollWidth;
     
-    // Fix for half-cut content: Ensure the last item is fully visible
-    // Subtract one full item width from max scroll to ensure last item is fully visible
+    // Ensure the last item is fully visible
     this.maxScroll = Math.max(0, totalWidth - containerWidth);
     
-    // Make sure we can scroll to show the last item completely
+    // Adjust to ensure we can fully see the last project
     const itemsPerView = Math.floor(containerWidth / this.itemWidth);
     const lastItemOffset = (this.projects.length - itemsPerView) * this.itemWidth;
     
