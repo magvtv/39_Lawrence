@@ -30,6 +30,7 @@
     <!--=== preload images=== -->
     <link rel="preload" as="image" href="./assets/images/hero-shape-1.png">
     <link rel="preload" as="image" href="./assets/images/hero-shape-2.png">
+    <link rel="preload" as="image" href="./assets/images/interview-1.jpeg">
 
 </head>
 
@@ -132,9 +133,17 @@
                                 <ion-icon name="cloud-download-outline" aria-hidden="true"></ion-icon>
                             </a>
 
-                            <p class="hero-text">
-                                Better product always beats a good idea
-                            </p>
+                            <div class="hero-social-list">
+                                <a href="https://www.facebook.com/lawrence.nderu/" class="social-link h6" title="Facebook">
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </a>
+                                <a href="https://x.com/lawrencenm" class="social-link h6" title="X">
+                                    <ion-icon name="logo-twitter"></ion-icon>
+                                </a>
+                                <a href="https://www.linkedin.com/in/dr-lawrence-nderu" class="social-link h6" title="LinkedIn">
+                                    <ion-icon name="logo-linkedin"></ion-icon>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <img src="./assets/images/hero-shape-1.png" width="559" height="232" alt="shape" class="shape shape-1">
@@ -259,55 +268,10 @@
                                     <p class="section-text">
                                         His teaching philosophy focuses on practical, hands-on learning, interdisciplinary collaboration, and fostering entrepreneurial thinking, guiding students to apply theoretical knowledge through real-world projects and innovative solutions.
                                     </p>
-
-                                    <ul class="about-list">
-
-                                        <li class="about-item">
-                                            <p class="list-title">
-                                                Name
-                                            </p>
-                                            <span class="span title h5">
-                                                Dr. Lawrence Nderu
-                                            </span>
-                                        </li>
-
-                                        <li class="about-item">
-                                            <p class="list-title">
-                                                Mobile
-                                            </p>
-                                            <span class="span title h5">
-                                                <a href="#contact" class="reveal-number" data-phone="+254721292202">Reveal Number</a>
-                                            </span>
-                                        </li>
-
-                                        <li class="about-item">
-                                            <p class="list-title">
-                                                Email Address
-                                            </p>
-
-                                            <span class="span title h5">
-                                                info@lawrence.co.ke
-                                            </span>
-                                        </li>
-
-                                        <li class="about-item">
-                                            <p class="list-title">
-                                                Socials
-                                            </p>
-
-                                            <div class="social-list">
-                                                <a href="https://www.facebook.com/lawrence.nderu/" class="social-link h6" title="Facebook">
-                                                    <ion-icon name="logo-facebook"></ion-icon>
-                                                </a>
-                                                <a href="https://x.com/lawrencenm" class="social-link h6" title="X">
-                                                    <ion-icon name="logo-twitter"></ion-icon>
-                                                </a>
-                                                <a href="https://www.linkedin.com/in/dr-lawrence-nderu" class="social-link h6" title="LinkedIn">
-                                                    <ion-icon name="logo-linkedin"></ion-icon>
-                                                </a>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    
+                                    <blockquote class="philosophy-quote">
+                                        <p class="quote-text">"Better product always beats a good idea"</p>
+                                    </blockquote>
                                 </div>
                             </div>
                         </div>
@@ -726,7 +690,11 @@
     <script type="module" src="./assets/js/config.js"></script>
     
     <!-- Data.js needs to be loaded as a module since we're using ES module exports -->
-    <script type="module" src="./assets/js/data.js"></script>
+    <script type="module">
+        import { customData } from './assets/js/data.js';
+        window.customData = customData;
+        console.log('Data loaded and set to window.customData:', window.customData);
+    </script>
     
     <!-- Feed module -->
     <script type="module" src="./assets/js/feed/index.js"></script>

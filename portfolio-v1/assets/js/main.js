@@ -13,6 +13,7 @@ import ContactForm from './modules/ContactForm.js';
 import { updateCopyright } from './utils/dom.js';
 import TestimonialCarousel from './modules/TestimonialCarousel.js';
 import ProjectsCarousel from './modules/ProjectsCarousel.js';
+import AboutSection from './modules/AboutSection.js';
 import { projectsData } from './data.js';
 
 // Initialize all modules when DOM is fully loaded
@@ -33,6 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize project carousel with data
         const projectsCarousel = new ProjectsCarousel();
         projectsCarousel.init(projectsData);
+        
+        // Initialize about section with dynamic data after a short delay
+        // to ensure all other components and data are loaded
+        setTimeout(() => {
+            console.log('Initializing AboutSection after delay');
+            console.log('Current customData:', window.customData);
+            new AboutSection();
+        }, 500);
 
         // Reveal Number functionality
         setupRevealNumber();

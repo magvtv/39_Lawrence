@@ -5,6 +5,134 @@
 
 // Custom content data for feeds and updates
 const customData = {
+    // About section data
+    about: {
+        philosophy: {
+            title: "Beyond Lecture Theories",
+            description: "His teaching philosophy focuses on practical, hands-on learning, interdisciplinary collaboration, and fostering entrepreneurial thinking, guiding students to apply theoretical knowledge through real-world projects and innovative solutions.",
+            points: [
+                "Practical application over theory",
+                "Interdisciplinary and project-based learning",
+                "Encourage entrepreneurial thinking",
+                "Mentorship and innovation leadership"
+            ],
+            image: "./assets/images/philosophy.jpeg"
+        },
+        experience: {
+            title: "Professional Journey",
+            description: "Dr. Nderu has extensive experience in academia, research, and industry collaboration, leading innovative projects in AI, machine learning, and digital identity systems.",
+            items: [
+                {
+                    title: "Chairman",
+                    organization: "JHUB Africa",
+                    duration: "2020 - Present",
+                    description: "Leading innovation hub fostering tech talent across Africa"
+                },
+                {
+                    title: "Senior Lecturer",
+                    organization: "Jomo Kenyatta University of Agriculture and Technology",
+                    duration: "2010 - Present",
+                    description: "Teaching and research in Computer Science, AI and Machine Learning"
+                },
+                {
+                    title: "Co-Founder",
+                    organization: "Global Digital Innovation Hub (gDIH)",
+                    duration: "2018 - Present",
+                    description: "Driving digital transformation and innovation across sectors"
+                }
+            ],
+            image: "./assets/images/interview-3.jpeg"
+        },
+        education: {
+            title: "Educational Background",
+            description: "Dr. Nderu holds advanced degrees in Computer Science with specializations in Artificial Intelligence and Machine Learning.",
+            items: [
+                {
+                    degree: "PhD in Computer Science",
+                    institution: "JKUAT",
+                    year: "2015",
+                    focus: "Artificial Intelligence"
+                },
+                {
+                    degree: "MSc in Computer Science",
+                    institution: "JKUAT",
+                    year: "2010",
+                    focus: "Machine Learning"
+                },
+                {
+                    degree: "BSc in Computer Science",
+                    institution: "JKUAT",
+                    year: "2005",
+                    focus: "Computer Science"
+                }
+            ],
+            image: "./assets/images/interview-1.jpeg"
+        },
+        certifications: {
+            title: "Professional Licenses & Certifications",
+            items: [
+                {
+                    name: "AWS Certified Solutions Architect",
+                    issuer: "Amazon Web Services",
+                    year: "2023",
+                    image: "./assets/images/interview-1.jpeg"
+                },
+                {
+                    name: "Microsoft Certified: Azure AI Engineer",
+                    issuer: "Microsoft",
+                    year: "2022",
+                    image: "./assets/images/interview-3.jpeg"
+                },
+                {
+                    name: "TensorFlow Developer Certificate",
+                    issuer: "Google",
+                    year: "2021",
+                    image: "./assets/images/philosophy.jpeg"
+                }
+            ]
+        },
+        collaborations: {
+            title: "Strategic Partnerships",
+            items: [
+                {
+                    partner: "Microsoft Africa",
+                    project: "AI Research Initiative",
+                    image: "./assets/images/philosophy.jpeg",
+                    type: "image"
+                },
+                {
+                    partner: "African Population and Health Research Center",
+                    project: "Digital Health Solutions",
+                    image: "./assets/images/interview-2.jpeg",
+                    type: "video"
+                },
+                {
+                    partner: "JICA-PAUSTI",
+                    project: "Technical Education Enhancement",
+                    image: "./assets/images/interview-1.jpeg",
+                    type: "audio"
+                },
+                {
+                    partner: "Gates Foundation",
+                    project: "Infectious Disease Modeling",
+                    image: "./assets/images/interview-3.jpeg",
+                    type: "image"
+                },
+                {
+                    partner: "Safaricom",
+                    project: "Digital Identity Systems",
+                    image: "./assets/images/philosophy.jpeg",
+                    type: "image"
+                },
+                {
+                    partner: "University of Nairobi",
+                    project: "Agent-Based Modeling Training",
+                    image: "./assets/images/interview-2.jpeg",
+                    type: "image"
+                }
+            ]
+        }
+    },
     projects: [
         {
             date: '2024-03-15',
@@ -210,6 +338,7 @@ export const projectsData = [
 
 // Make customData available globally for non-module scripts
 window.customData = customData;
+console.log('Setting window.customData in data.js:', customData);
 
 // Export customData as well for module use
 export { customData }; 
